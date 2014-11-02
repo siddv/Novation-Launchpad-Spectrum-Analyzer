@@ -952,7 +952,7 @@ def launchpad():
 
     localIndex = 0
 
-    localMax = 425
+    localMax = 400
 
     for (i, item) in enumerate(T1line):
 
@@ -961,21 +961,21 @@ def launchpad():
             pass
         else:
 
-
+            item = item-25
             localIndex += 1
             if item < localMax:
                 localMax = item
             if localIndex >= 212:
                 aggregateFFT.append(localMax)
                 localIndex = 0
-                localMax = 425
+                localMax = 400
 
     print aggregateFFT
     #print len(T1line)
     
     for (i, item) in enumerate(aggregateFFT):
 
-        item = item/60
+        item = item/50
         bar = math.floor(item)
         bar = int(bar)
         bar = 8-bar
